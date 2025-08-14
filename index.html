@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>رؤية مصر 2030 - تحفة فنية برمجية</title>
+  <!-- خطوط عربية فاخرة -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&family=Reem+Kufi+Fun:wght@700&family=Amiri:ital,wght@1,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold-color: #FFD700;
+      --dark-blue: #000c1f;
+      --glow-color: rgba(255, 215, 0, 0.8);
+    }
+
+    body {
+      margin: 0;
+      background: var(--dark-blue);
+      color: #fff;
+      font-family: 'Cairo', sans-serif;
+      overflow: hidden; /* لمنع ظهور شرائط التمرير بسبب التأثيرات */
+    }
+
+    #vanta-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* تأثير النص الماسي المتلألىء */
+    .title {
+      font-family: 'Reem Kufi Fun', cursive;
+      font-size: 4rem;
+      font-weight: 900;
+      background: linear-gradient(145deg, #fff, #ffd700, #f0e68c, #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: text-glow 5s infinite ease-in-out;
+      text-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-color), 0 0 40px #000;
+      margin: 0;
+    }
+
+    @keyframes text-glow {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+      }
+      50% {
+        transform: scale(1.05);
+        opacity: 1;
+      }
+    }
+
+    .subtitle {
+      font-family: 'Cairo', sans-serif;
+      font-size: 1.5rem;
+      color: #eee;
+      margin-top: 10px;
+      letter-spacing: 2px;
+    }
+
+    /* بطاقات المشاريع */
+    .projects-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 50px;
+      perspective: 1500px; /* لإعطاء عمق للتأثير ثلاثي الأبعاد */
+    }
+
+    .project-card {
+      position: relative;
+      width: 320px;
+      height: 400px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 20px;
+      border: 2px solid var(--gold-color);
+      box-shadow: 0 0 15px var(--glow-color), inset 0 0 15px rgba(0,0,0,0.5);
+      transform-style: preserve-3d;
+      transition: transform 0.8s, box-shadow 0.8s;
+      cursor: pointer;
+    }
+
+    .project-card:hover {
+      transform: rotateY(180deg) scale(1.05);
+      box-shadow: 0 0 30px var(--glow-color), inset 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden; /* لإخفاء الوجه الخلفي عند الدوران */
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .card-front {
+      background: linear-gradient(to top, rgba(0,0,0,0.9) 20%, transparent);
+    }
+
+    .card-front h3 {
+      font-family: 'Amiri', serif;
+      font-size: 2rem;
+      color: var(--gold-color);
+      margin: 20px;
+      text-shadow: 2px 2px 5px #000;
+    }
+
+    .card-back {
+      background: rgba(0, 12, 31, 0.95);
+      transform: rotateY(180deg);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .card-back h4 {
+      font-family: 'Reem Kufi Fun', cursive;
+      color: var(--gold-color);
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .card-back p {
+      font-family: 'Cairo', sans-serif;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #ddd;
+    }
+
+    .highlight {
+        font-weight: bold;
+        color: var(--gold-color);
+    }
+
+  </style>
+</head>
+<body>
+
+  <div id="vanta-canvas"></div>
+  <div class="container">
+    <h1 class="title">رؤية مصر 2030</h1>
+    <p class="subtitle">مستقبل مشرق... بتصميم يتحدى المستحيل</p>
+
+    <div class="projects-container">
+      <div class="project-card" style="background-image: url('https://images.unsplash.com/photo-1604719312566-8912e9227c6a?q=80&w=800&auto=format&fit=crop');">
+        <div class="card-face card-front">
+          <h3>العاصمة الإدارية الجديدة</h3>
+        </div>
+        <div class="card-face card-back">
+          <h4>مركز مصر المستقبلي</h4>
+          <p>
+            مدينة ذكية من الجيل الرابع، تمثل نقلة حضارية وتنموية. تهدف لتخفيف الضغط عن القاهرة وتكون <span class="highlight">مركزاً للحكم والمال والأعمال</span> بمواصفات عالمية.
+          </p>
+        </div>
+      </div>
+
+      <div class="project-card" style="background-image: url('https://images.unsplash.com/photo-1508515053969-7b94594e79b2?q=80&w=800&auto=format&fit=crop');">
+        <div class="card-face card-front">
+          <h3>محطة بنبان للطاقة الشمسية</h3>
+        </div>
+        <div class="card-face card-back">
+          <h4>شمس أسوان تضيء المستقبل</h4>
+          <p>
+            واحدة من <span class="highlight">أكبر محطات الطاقة الشمسية في العالم</span>، تعزز مكانة مصر في مجال الطاقة النظيفة والمتجددة، وتدعم الشبكة القومية للكهرباء.
+          </p>
+        </div>
+      </div>
+
+      <div class="project-card" style="background-image: url('https://images.unsplash.com/photo-1599841808453-7a91a457596a?q=80&w=800&auto=format&fit=crop');">
+        <div class="card-face card-front">
+          <h3>مبادرة حياة كريمة</h3>
+        </div>
+        <div class="card-face card-back">
+          <h4>تنمية الإنسان المصري</h4>
+          <p>
+            أضخم مشروع تنموي في تاريخ مصر، يهدف إلى <span class="highlight">تطوير الريف المصري</span> وتحسين جودة حياة الملايين من خلال تطوير البنية التحتية والخدمات الصحية والتعليمية.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- مكتبات التأثيرات المرئية -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.net.min.js"></script>
+  <script>
+    // تفعيل خلفية الشبكة المتحركة
+    VANTA.NET({
+      el: "#vanta-canvas",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0xffd700, // لون ذهبي
+      backgroundColor: 0x000c1f, // أزرق داكن
+      points: 12.00,
+      maxDistance: 25.00,
+      spacing: 18.00
+    });
+  </script>
+</body>
+</html>
